@@ -72,15 +72,15 @@ function App() {
   return (
     <div className="app-shell">
       <header className="topbar">
-        <a className="brand" href="#top" aria-label="Open Arena home">
+        <a className="brand" href="#top" aria-label="Accueil Open Arena">
           <span className="brand-mark"><Zap size={17} strokeWidth={2.8} /></span>
           <span>OPEN<span>ARENA</span></span>
         </a>
 
-        <nav className="desktop-nav" aria-label="Main navigation">
-          <a className="active" href="#live">Live arena</a>
-          <a href="#how">How it works</a>
-          <a href="#rules">Open rules</a>
+        <nav className="desktop-nav" aria-label="Navigation principale">
+          <a className="active" href="#live">Arène en direct</a>
+          <a href="#how">Fonctionnement</a>
+          <a href="#rules">Règles ouvertes</a>
         </nav>
 
         <div className="top-actions">
@@ -90,16 +90,16 @@ function App() {
           </button>
           <button className="profile-button">
             <span className="avatar">R7</span>
-            <span className="profile-copy"><b>TANA-R7K4</b><small>Verified player</small></span>
+            <span className="profile-copy"><b>TANA-R7K4</b><small>Joueur vérifié</small></span>
             <ChevronDown size={16} />
           </button>
         </div>
       </header>
 
       <main id="top">
-        <section className="arena-strip" aria-label="Arena selector">
+        <section className="arena-strip" aria-label="Sélecteur d’arène">
           <div className="arena-select-wrap">
-            <span className="eyebrow">YOUR CITY ARENA</span>
+            <span className="eyebrow">ARÈNE DE TA VILLE</span>
             <button className="arena-select" onClick={() => setArenaMenuOpen((open) => !open)}>
               <MapPin size={18} />
               <span>{selectedArena.city}</span>
@@ -110,80 +110,80 @@ function App() {
                 {arenas.map((arena) => (
                   <button key={arena.city} onClick={() => { setSelectedArena(arena); setArenaMenuOpen(false) }}>
                     <span>{arena.city}</span>
-                    <small>{arena.live ? 'Live now' : 'Coming soon'}</small>
+                    <small>{arena.live ? 'En direct' : 'Bientôt'}</small>
                   </button>
                 ))}
               </div>
             )}
           </div>
-          <div className="arena-pulse"><span /> LIVE · ROUND 07</div>
-          <div className="arena-members"><Users size={17} /> {selectedArena.members} local players</div>
+          <div className="arena-pulse"><span /> DIRECT · MANCHE 07</div>
+          <div className="arena-members"><Users size={17} /> {selectedArena.members} joueurs locaux</div>
         </section>
 
         <section className="hero-grid" id="live">
           <div className="hero-copy">
-            <div className="live-badge"><span /> LIVE PRODUCT CHALLENGE</div>
-            <h1>Win the right<br />to buy it <em>first.</em></h1>
+            <div className="live-badge"><span /> DÉFI PRODUIT EN DIRECT</div>
+            <h1>Gagne le droit<br />d’acheter <em>en premier.</em></h1>
             <p className="hero-lead">
-              A free, skill-based competition. Use your tools, your team and your edge. The best scores unlock purchase priority.
+              Une compétition gratuite basée sur les compétences. Utilise tes outils, ton équipe et ton avantage. Les meilleurs scores débloquent la priorité d’achat.
             </p>
             <div className="open-rule">
               <ShieldCheck size={21} />
-              <div><b>Open Class rules</b><span>AI, automation and teamwork are explicitly allowed.</span></div>
-              <a href="#rules">View rules <ArrowRight size={15} /></a>
+              <div><b>Règles Open Class</b><span>IA, automatisation et travail d’équipe sont explicitement autorisés.</span></div>
+              <a href="#rules">Voir les règles <ArrowRight size={15} /></a>
             </div>
           </div>
 
           <aside className="timer-panel">
-            <span className="eyebrow">ROUND CLOSES IN</span>
-            <div className="countdown" aria-label={`${formatTime(timeLeft)} remaining`}>
+            <span className="eyebrow">FIN DE LA MANCHE DANS</span>
+            <div className="countdown" aria-label={`${formatTime(timeLeft)} restantes`}>
               {formatTime(timeLeft).split(':').map((part, index) => (
-                <div key={`${part}-${index}`}><strong>{part}</strong><small>{['HOURS', 'MIN', 'SEC'][index]}</small></div>
+                <div key={`${part}-${index}`}><strong>{part}</strong><small>{['HEURES', 'MIN', 'SEC'][index]}</small></div>
               ))}
             </div>
             <button className="primary-button" onClick={() => setInviteOpen(true)}>
-              {joined ? <><Check size={19} /> You are registered</> : <>Enter with my coupon <ArrowRight size={19} /></>}
+              {joined ? <><Check size={19} /> Tu es inscrit</> : <>Entrer avec mon coupon <ArrowRight size={19} /></>}
             </button>
-            <p><CircleHelp size={15} /> Free entry. Payment only after qualification.</p>
+            <p><CircleHelp size={15} /> Entrée gratuite. Paiement seulement après qualification.</p>
           </aside>
         </section>
 
         <section className="product-section">
-          <div className="product-visual" aria-label="Solar power station product illustration">
+          <div className="product-visual" aria-label="Illustration du générateur solaire portable">
             <div className="glow glow-one" />
             <div className="glow glow-two" />
-            <div className="product-tag"><Sparkles size={15} /> ARENA EXCLUSIVE</div>
+            <div className="product-tag"><Sparkles size={15} /> EXCLUSIF ARÈNE</div>
             <div className="power-station">
               <div className="power-handle" />
               <div className="power-face">
-                <span className="screen"><small>OUTPUT</small><b>1200<em>W</em></b></span>
+                <span className="screen"><small>SORTIE</small><b>1200<em>W</em></b></span>
                 <span className="socket" /><span className="socket" />
                 <span className="power-button" />
               </div>
             </div>
-            <div className="float-card float-available"><PackageCheck size={18} /><div><b>50 units</b><span>Verified stock</span></div></div>
-            <div className="float-card float-city"><MapPin size={18} /><div><b>Antananarivo</b><span>Local allocation</span></div></div>
+            <div className="float-card float-available"><PackageCheck size={18} /><div><b>50 unités</b><span>Stock vérifié</span></div></div>
+            <div className="float-card float-city"><MapPin size={18} /><div><b>Antananarivo</b><span>Allocation locale</span></div></div>
           </div>
 
           <div className="product-info">
-            <div className="section-kicker">CURRENT DROP · #A-007</div>
+            <div className="section-kicker">DROP EN COURS · #A-007</div>
             <h2>VoltEdge 1200W<br />Portable Power Station</h2>
-            <p>Reliable backup power for daily outages. Local stock, verified arrival and transparent fulfillment.</p>
+            <p>Une source d’énergie fiable pour les coupures du quotidien. Stock local, arrivée vérifiée et livraison transparente.</p>
 
             <div className="stock-block">
-              <div><span>Available purchase rights</span><strong>38 <small>/ 50</small></strong></div>
+              <div><span>Droits d’achat disponibles</span><strong>38 <small>/ 50</small></strong></div>
               <div className="stock-track"><span style={{ width: `${availablePercent}%` }} /></div>
-              <small>12 players currently above the qualification line</small>
+              <small>12 joueurs sont actuellement au-dessus de la ligne de qualification</small>
             </div>
 
             <div className="price-row">
-              <div><span>Fixed purchase price</span><strong>2,480,000 <small>Ar</small></strong></div>
+              <div><span>Prix d’achat fixe</span><strong>2,480,000 <small>Ar</small></strong></div>
               <span className="money-pill">Mobile Money</span>
             </div>
 
             <div className="logistics-grid">
-              <div><Route size={19} /><span>Estimated departure<b>28 Jul 2026</b></span></div>
-              <div><Clock3 size={19} /><span>City arrival window<b>06–09 Aug</b></span></div>
+              <div><Route size={19} /><span>Départ estimé<b>28 juil. 2026</b></span></div>
+              <div><Clock3 size={19} /><span>Arrivée prévue en ville<b>06–09 août</b></span></div>
             </div>
           </div>
         </section>
@@ -191,22 +191,22 @@ function App() {
         <section className="content-grid" id="how">
           <div className="challenge-card">
             <div className="card-heading">
-              <div><span className="eyebrow">THIS ROUND</span><h3>The Power Route Challenge</h3></div>
-              <span className="difficulty">ADVANCED</span>
+              <div><span className="eyebrow">CETTE MANCHE</span><h3>Défi Power Route</h3></div>
+              <span className="difficulty">AVANCÉ</span>
             </div>
-            <p>Build the lowest-risk delivery plan across four checkpoints. Your score combines accuracy, speed and verified reasoning.</p>
+            <p>Construis le plan de livraison le moins risqué à travers quatre points de contrôle. Ton score combine précision, vitesse et raisonnement vérifié.</p>
             <div className="challenge-metrics">
-              <div><Box size={18} /><span><b>4</b> checkpoints</span></div>
+              <div><Box size={18} /><span><b>4</b> points</span></div>
               <div><Clock3 size={18} /><span><b>8 min</b> maximum</span></div>
-              <div><Trophy size={18} /><span><b>Top 50</b> qualify</span></div>
+              <div><Trophy size={18} /><span><b>Top 50</b> qualifié</span></div>
             </div>
-            <button className="secondary-button" onClick={() => setInviteOpen(true)}>{joined ? 'Continue challenge' : 'Preview challenge'} <ArrowRight size={18} /></button>
+            <button className="secondary-button" onClick={() => setInviteOpen(true)}>{joined ? 'Continuer le défi' : 'Voir le défi'} <ArrowRight size={18} /></button>
           </div>
 
           <div className="leaderboard-card">
             <div className="card-heading">
-              <div><span className="eyebrow">LIVE STANDINGS</span><h3>Qualification line</h3></div>
-              <span className="updated"><span /> Updating</span>
+              <div><span className="eyebrow">CLASSEMENT EN DIRECT</span><h3>Ligne de qualification</h3></div>
+              <span className="updated"><span /> Mise à jour</span>
             </div>
             <div className="leaderboard">
               {standings.map((player) => (
@@ -219,47 +219,47 @@ function App() {
                 </div>
               ))}
             </div>
-            <div className="privacy-note"><ShieldCheck size={16} /> Public standings use anonymous player IDs.</div>
+            <div className="privacy-note"><ShieldCheck size={16} /> Le classement public utilise des identifiants anonymes.</div>
           </div>
         </section>
 
         <section className="rules-section" id="rules">
-          <span className="eyebrow">THE OPEN CLASS PROMISE</span>
-          <h2>Unequal tools. Identical rules.</h2>
+          <span className="eyebrow">LA PROMESSE OPEN CLASS</span>
+          <h2>Outils inégaux. Règles identiques.</h2>
           <div className="rule-grid">
-            <article><span>01</span><h3>Everything allowed is declared</h3><p>AI, teams, automation and external research are part of the format—not hidden advantages.</p></article>
-            <article><span>02</span><h3>No payment to compete</h3><p>Participation is free. Mobile Money is requested only if a qualified player chooses to purchase.</p></article>
-            <article><span>03</span><h3>Server-verified results</h3><p>Scoring, timestamps and tie-breaks are auditable and identical for every participant.</p></article>
+            <article><span>01</span><h3>Tout avantage autorisé est déclaré</h3><p>IA, équipes, automatisation et recherche externe font partie du format — ce ne sont pas des avantages cachés.</p></article>
+            <article><span>02</span><h3>Aucun paiement pour participer</h3><p>La participation est gratuite. Mobile Money est demandé seulement si un joueur qualifié choisit d’acheter.</p></article>
+            <article><span>03</span><h3>Résultats vérifiés côté serveur</h3><p>Score, horodatage et départage sont auditables et identiques pour chaque participant.</p></article>
           </div>
         </section>
       </main>
 
       <footer>
         <div className="brand"><span className="brand-mark"><Zap size={16} /></span><span>OPEN<span>ARENA</span></span></div>
-        <p>Competitive access. Transparent commerce.</p>
+        <p>Accès compétitif. Commerce transparent.</p>
         <span>Antananarivo · Madagascar</span>
       </footer>
 
       {inviteOpen && (
         <div className="modal-backdrop" role="presentation" onMouseDown={() => setInviteOpen(false)}>
           <div className="invite-modal" role="dialog" aria-modal="true" aria-labelledby="invite-title" onMouseDown={(event) => event.stopPropagation()}>
-            <button className="modal-close" onClick={() => setInviteOpen(false)} aria-label="Close"><X size={19} /></button>
+            <button className="modal-close" onClick={() => setInviteOpen(false)} aria-label="Fermer"><X size={19} /></button>
             <div className="modal-icon"><Zap size={23} /></div>
-            <span className="eyebrow">INVITATION VERIFIED</span>
-            <h2 id="invite-title">Welcome to Round 07</h2>
-            <p>Your coupon grants one free attempt in the Antananarivo Open Arena.</p>
+            <span className="eyebrow">INVITATION VÉRIFIÉE</span>
+            <h2 id="invite-title">Bienvenue dans la manche 07</h2>
+            <p>Ton coupon donne accès à une tentative gratuite dans l’Open Arena d’Antananarivo.</p>
             <div className="coupon-code"><span>TANA</span><b>R7K4-92AF</b><Check size={18} /></div>
             <ul>
-              <li><Check size={16} /> Entry costs 0 Ar</li>
-              <li><Check size={16} /> AI and teamwork are permitted</li>
-              <li><Check size={16} /> Your public identity stays masked</li>
+              <li><Check size={16} /> L’entrée coûte 0 Ar</li>
+              <li><Check size={16} /> IA et travail d’équipe autorisés</li>
+              <li><Check size={16} /> Ton identité publique reste masquée</li>
             </ul>
-            <button className="primary-button" onClick={joinArena}>Register for free <ArrowRight size={19} /></button>
+            <button className="primary-button" onClick={joinArena}>S’inscrire gratuitement <ArrowRight size={19} /></button>
           </div>
         </div>
       )}
 
-      {notice && <div className="toast"><Bell size={18} /><div><b>Arena update</b><span>{joined ? 'You are registered for Round 07.' : 'Notifications are enabled for this demo.'}</span></div></div>}
+      {notice && <div className="toast"><Bell size={18} /><div><b>Mise à jour de l’arène</b><span>{joined ? 'Tu es inscrit à la manche 07.' : 'Les notifications sont activées pour cette démo.'}</span></div></div>}
     </div>
   )
 }
