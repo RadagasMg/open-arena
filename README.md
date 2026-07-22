@@ -1,15 +1,15 @@
 # Open Arena
 
-A React prototype for city-based, invitation-only product competitions. Participation is free; qualified players receive a temporary right to purchase a product at a fixed price.
+Prototype React pour des compétitions produit par ville, accessibles sur invitation. La participation est gratuite ; les joueurs qualifiés reçoivent un droit temporaire d’acheter un produit à prix fixe.
 
 ## Stack
 
 - React 19 + TypeScript + Vite
-- Firebase Auth and Firestore adapter
-- Vercel SPA configuration
-- Lucide icons
+- Adaptateur Firebase Auth et Firestore
+- Configuration SPA pour Vercel
+- Icônes Lucide
 
-## Local development
+## Développement local
 
 ```bash
 npm install
@@ -17,12 +17,12 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Firebase is optional for the visual prototype. Add a web application's public Firebase configuration to `.env.local` when a project is ready.
+Firebase est optionnel pour le prototype visuel. Ajoute la configuration publique d’une application web Firebase dans `.env.local` quand le projet est prêt.
 
-## Product guardrails
+## Garde-fous produit
 
-- No entry fee or paid attempts
-- No random winner selection
-- Product payment happens only after qualification
-- Public participants use pseudonymous player IDs
-- Scoring and tie-breaks belong on a trusted server
+- Aucun frais d’entrée ni tentative payante
+- Aucun gagnant choisi au hasard
+- Le paiement du produit arrive seulement après qualification
+- Les participants publics utilisent des identifiants pseudonymes
+- Le score et les départages doivent être gérés par un serveur fiable
